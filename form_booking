@@ -1,0 +1,136 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: login_form.php");
+    exit();
+}
+
+include 'db_connection.php';
+include 'date_generator.php';
+include 'class_data_fetcher.php';
+
+
+
+$conn = get_database_connection();
+
+$dates = generationNextSevenDays();
+
+
+$defaultDate = $dates[0]['dayOfWeek'];
+$defaultClasses = getClassDataForDay($conn,$defaultDate);
+
+
+$conn ->close();
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Responsive_Website/Css/booking.css">
+    <script src="../Javascript/booking_scripts.js"></script>
+    <title>booking_form</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: form_login.php");
+    exit();
+}
+include 'db_connection.php';
+include 'date_generator.php';
+include 'class_data_fetcher.php';
+
+
+$conn = get_database_connection();
+
+// Get the next 7 days using date generator file
+$dates = generateNextSevenDays();
+
+// Get classes for the default date (first date)
+$defaultDate = $dates[0]['dayOfWeek'];
+$defaultClasses = getClassDataForDay($conn, $defaultDate);
+
+$conn->close();
+
+?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheet/style_booking.css">
+    <script src="../Javascript/booking_scripts.js"></script>
+    <div 
+    data-dates="<?php echo htmlspecialchars(json_encode($dates)); ?>"
+    data-default-classes="<?php echo htmlspecialchars(json_encode($defaultClasses)); ?>"
+     id ="data-holder"> </div>
+    <title>Book a Class</title>
+    
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h5v-6h4v6h5v-8h3L12 2z"/>
+            </svg>
+            <span class="company-name">Gym Company</span>
+        </div>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+            <a href="logout.php">Logout</a>
+        </div>
+    </nav>
+
+    <div class="booking_hero">
+        <h1>Book a Class</h1>
+        <p>Select your preferred class, date, and time</p>
+    </div>
+
+    <div class="booking_container">
+        <form id="bookingForm" action="submit_booking.php" method="POST">
+
+                <div class="form-group">
+                    <label for="date">Select Date:</label>
+                    <select id="date" name="date" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="class">Select Class:</label>
+                    <select id="class" name="class" required></select>
+                </div>
+  
+            <div class="form-group">
+                <label for="time">Select Time:</label>
+                <select id="time" name="time" required></select>
+            </div>
+
+            <div id="instructor"></div>
+
+            <button type="submit">Book Class</button>
+        </form>
+    </div>
+
+  
+</body>
+</html>
