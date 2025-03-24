@@ -1,0 +1,214 @@
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+
+nav{
+    background-color: rgb(106, 142, 35);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+
+.nav-left {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    color: bisque;
+    font-size: 20px;
+
+
+}
+
+
+.nav-left svg{
+    width: 36px;
+    height: 36px;
+    fill: bisque;
+    margin-right: 10px;
+}
+
+
+.company-name{
+    color: bisque;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar{
+    display: flex;
+    list-style-type: none;
+    margin: 0.1;
+
+}
+
+
+.navbar li {
+    margin: 0 15px;
+}
+
+
+.navbar a {
+    text-decoration: none;
+    color: bisque;
+    font-size: 20px;
+    padding: 8px 15px;
+    transition: background-color 0.3 ease;
+}
+
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: bisque;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.nav-right a:hover{
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.nav-right span{
+
+    color: bisque;
+    font-size: 20px;
+}
+.Hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../images/Giraffe.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: bisque;
+    padding:10px;
+}
+
+
+
+.Hero h1{
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.Hero p{
+    font-size: 24px;
+    max-width: 600px;
+}
+
+.Hero a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3 ease;
+    background-color: green;
+    border: 10px;
+}
+
+.Hero a:hover{
+    background-color: greenyellow;
+    border: 10px;
+}
+
+
+.footer {
+    background-color: #1aa30e;
+}
+
+
+.copyright {
+    display: flex;
+    margin-top: 10px;
+    background-color: olivedrab;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    font-weight: 700;
+
+}
+
+.register_container_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw; /* 90% of viewport width */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+}
+
+
+
+@media (max-width: 480px){
+    .navbar a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .box{
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .navbar {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .Hero h1 {
+        font-size: 32px;
+    }
+
+    .Hero p {
+        font-size: 18px;
+    }
+}
+
+
+@media (min-width: 481px){
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .box{
+        flex: 1;
+        max-width: 100%;
+    }
+}

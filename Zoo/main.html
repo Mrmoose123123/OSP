@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main_page</title>
+    <link rel="stylesheet" href="Css/main.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2L2 12h3v8h5v-6h4v6h5v-8h3L12 2z"/>
+            </svg>
+            <span class="comapany-name">Riget Zoo Adventures</span>
+        </div>
+
+
+        <ul class="navbar">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+
+
+
+
+
+            <div class="nav-right">
+                <a href="/PHP/login_form.php">Login</a>
+                <a href="PHP/register.php">register</a>
+              </div>
+              
+              <script>
+                // Function to get the username from localStorage
+                function getUsername() {
+                  return localStorage.getItem('username') || 'User'; // Default to 'User' if not found
+                }
+              
+                // Function to update the username on the page
+                function updateUsername() {
+                  const usernameElement = document.getElementById('username');
+                  if (usernameElement) {
+                    const username = getUsername();
+                    usernameElement.textContent = username;
+                  }
+                }
+              
+                // Call the function to update the username when the page loads
+                updateUsername();
+              
+                // Optionally, listen for changes in localStorage and update the username
+                window.addEventListener('storage', function(event) {
+                  if (event.key === 'username') {
+                    updateUsername();
+                  }
+                });
+              </script>
+        </div>
+
+    </nav>
+
+
+
+
+        <div class="Hero">
+            <h1>Riget Zoo Adventures</h1>
+
+            <a href="PHP/login_form.php" class="booking">Buy Tickets</a>
+
+        </div>
+
+
+        <footer>
+            <div class="copyright">
+                <a>riget zoo adventures owns all rights to website, having agreed to the terms and conditions</a>
+            </div>
+    
+        </footer>
+
+
+
+        <div id="cookie-overlay">
+            <h1>We use cookies on this website.</h1>
+            <p>This is so that we can store information about you on this website. These cookies will only be used on this website.<br/></h1>
+            <br>
+            <br>
+            <button id="cookie-accept" onclick="closeCookieConsent()">OK</button>
+        </div>
+        <div id="accessibility" class="accessibility">
+            <a href="javascript:void(0)" class="closebtn" onclick="asClose()">Close</a>
+            <a onclick="increaseTextSize()">Increase font size</a>
+            <a onclick="decreaseTextSize()">Decrease font size</a>
+            <a onclick="changeArial()">Readable font</a>
+            <a onclick="underlineLinks()">Underline links</a>
+            <a onclick="hContrast()">High contrast</a>
+            <a onclick="asReset()">Reset</a>
+          </div>
+        <div id="accessibility_main">
+            <button class="accessibility_btn" onclick="asOpen()">Accessibility</button>  
+        </div>
+
+        </p>
+
+        <script src="javascript/as.js"></script>
+        <script src="javascript/asopenclose.js"></script>
+        <script src="javascript/initialisation.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+            </style>
+
+
+
+</body>
+</html>
+
+

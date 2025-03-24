@@ -1,0 +1,420 @@
+/* style.css */
+
+/* General Styles */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+:root{
+    --font-size-p: 1rem; 
+    --font-size-h1: 3rem; 
+    --font-size-navbar: 0.95rem; 
+    --font-family:'PT Sans'; 
+    --underline1: none; 
+    --underline2: underline; 
+    --background: #5f4444; 
+    --text: #f4f4f4; 
+    --text-black: #1f1515; 
+    --black: #000000; 
+    --a:#ffffff; 
+    --a2: #000000; 
+    --a-clicked: #0fbfe4; 
+    --a-visited: #e49f0f; 
+    --navbar: #333; 
+    --hover: #555; 
+    --button: #0fbfe4; 
+    --button-pressed: #000; 
+    --button-bg: #e49f0f; 
+    --box1: #e0f7fa; 
+    --box2: #ffe0b2; 
+    --box3: #f8bbd0; 
+    --box4: #d1c4e9; 
+    --high-contrast-black: transparent; 
+    --a-decoration: none; 
+} 
+
+body {
+    font-family: var(--font-family); 
+    font-weight: 400; 
+    background-color: var(--background); 
+    color: var(--text-black); 
+}
+
+a {
+    color: var(--a2);
+    border-style: var(--a-decoration); 
+    border-color: var(--a); 
+    border-width: 3px; 
+}
+
+a:hover{ 
+    border-color: var(--a-clicked); 
+}
+
+body, ul, li { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: rgb(106, 142, 35);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    color: bisque;
+    font-size: 20px;
+}
+
+.nav-left svg {
+    width: 36px;
+    height: 36px;
+    fill: bisque;
+    margin-right: 10px;
+}
+
+.company-name {
+    color: bisque;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: 0.1;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: bisque;
+    font-size: 20px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: bisque;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.nav-right a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Hero Section Styles */
+.Hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../images/Giraffe.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: bisque;
+    padding: 20px;
+}
+
+.Hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.Hero p {
+    font-size: 24px;
+    max-width: 600px;
+}
+
+.Hero a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    background-color: green;
+    border: 10px;
+}
+
+.Hero a:hover {
+    background-color: greenyellow;
+    border: 10px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1aa30e;
+}
+
+.copyright {
+    display: flex;
+    margin-top: 10px;
+    background-color: olivedrab;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    font-weight: 700;
+}
+
+/* Register Container Styles */
+.register_container_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw; /* 90% of viewport width */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+}
+
+/* Form Styles */
+.form-box label {
+    display: block;
+    color: #000; /* Dark gray color */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+    margin-left: 10%; /* Aligns label text with the input boxes */
+    text-align: left;
+}
+
+.form-box {
+    width: 100%; /* Full width inside the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box input[type="password"],
+.form-box input[type="tel"],
+.form-box input[type="date"] {
+    width: 80%; /* Consistent width */
+    padding: 10px;
+    margin: 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Centers the input boxes */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Ensures text is readable and consistent */
+}
+
+.form-box button {
+    width: 80%; /* Match input field width */
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px; /* Extra margin to separate from the fields */
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(106, 142, 35);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .navbar {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .Hero h1 {
+        font-size: 32px;
+    }
+
+    .Hero p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 481px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .box {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
+/* Accessibility Styles */
+.accessibility { 
+    width: 9rem;
+    position: fixed; 
+    bottom: 0%;
+    z-index: 1; 
+    left: 0;
+    background-color: var(--navbar);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-wrap: nowrap;
+}
+
+.accessibility a { 
+    background-color: var(--navbar);
+    padding: 8px 8px 8px 8px;
+    text-decoration: var(--underline1);
+    font-size: var(--font-size-p2);
+    color: var(--a);
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.accessibility a:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+    color: var(--a-clicked);
+}
+
+.accessibility .closebtn {
+    position: absolute; 
+    top: 10px;
+    right: 25px;
+    font-size: var(--font-size-p2);
+    margin-left: 50px;
+    color: var(--text);
+    text-decoration: var(--underline1);
+    padding: 2px 5px 2px 5px;
+}
+
+.accessibility .closebtn:hover {
+    color: var(--a-clicked);
+}
+
+.accessibility_btn {
+    position: fixed; 
+    bottom: 4.5%;
+    font-size: var(--font-size-p2);
+    cursor: pointer;
+    background-color: var(--navbar);
+    color: var(--text);
+    padding: 10px 15px;
+    border: none;
+}
+
+.accessibility_btn:hover {
+    background-color: var(--navbar);
+}
+
+#accessibility_main {
+    position: absolute;
+    transition: margin-left .5s;
+}
+
+/* Cookie Overlay Styles */
+#cookie-overlay {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+#cookie-overlay h1 {
+    color: var(--text);
+    font-size: var(--font-size-h1);
+}
+
+#cookie-overlay p {
+    text-align: center;
+    color: var(--text);
+    font-size: var(--font-size-p2);
+}
+
+#cookie-accept {
+    position: inherit;
+    font-size: var(--font-size-p2);
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--button);
+    padding: 15px 100px 15px 100px;
+    border: 5px solid var(--button);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px; /* Add margin between tables */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
