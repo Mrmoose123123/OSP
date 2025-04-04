@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rolsa Technologies</title>
+    <!-- Link to the SAME CSS file as your main page -->
+    <link rel="stylesheet" href="Css/main.css">
+    <!-- If contact.css has *only* page-specific styles, you might link both: -->
+    <!-- <link rel="stylesheet" href="Css/contact_specific.css"> -->
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <!-- Your SVG Logo -->
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="100 -50 500 600">
+                <!-- SVG defs and content -->
+                <defs>
+                    <style>
+                      .cls-1 { fill: #009444; }
+                      .cls-2 { fill: #231f20; font-family: Magneto-Bold, Magneto; font-size: 36px; font-weight: 700; }
+                      .cls-3 { fill: url(#linear-gradient); }
+                      .cls-3, .cls-4 { stroke: #231f20; stroke-miterlimit: 10; }
+                      .cls-4 { fill: url(#linear-gradient-2); }
+                    </style>
+                    <linearGradient id="linear-gradient" x1="181.34" y1="218.41" x2="391.91" y2="218.41" gradientTransform="translate(250.79 -140.16) rotate(46.98)" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#fff"/>
+                      <stop offset=".64" stop-color="#39b54a"/>
+                    </linearGradient>
+                    <linearGradient id="linear-gradient-2" x1="240.63" y1="218.41" x2="332.63" y2="218.41" gradientTransform="matrix(1,0,0,1,0,0)" xlink:href="#linear-gradient"/>
+                </defs>
+                <g><g id="Layer_1">
+                      <rect class="cls-3" x="210.54" y="145.41" width="152.18" height="146" transform="translate(-68.6 278.99) rotate(-46.98)"/>
+                      <rect class="cls-1" x="262.85" y="142.37" width="46" height="152.3" transform="translate(238.24 -138.12) rotate(45)"/>
+                      <ellipse class="cls-4" cx="286.63" cy="218.41" rx="46" ry="40"/>
+                      <text class="cls-2" transform="translate(270.64 230.48)"><tspan x="0" y="0">R</tspan></text>
+                </g></g>
+            </svg>
+            <span class="company-name">Rolsa Technologies</span>
+        </div>
+
+        <!-- === HAMBURGER BUTTON ADDED HERE === -->
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <!-- =================================== -->
+
+        <ul class="navbar">
+             <!-- Corrected link back to main page assuming it's main.html or index.html -->
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Carbon.html">Carbon Calculator</a></li>
+            <li class="mobile-only"><a href="/PHP/login_form.php">Login</a></li>
+            <li class="mobile-only"><a href="/PHP/form_ref.php">Register</a></li>
+        </ul>
+
+        <div class="nav-right">
+
+        </div>
+    </nav>
+
+    <!-- Use <main> for the primary content -->
+    <main class="Hero contact-hero"> <!-- Added specific class for potential styling -->
+        <h1>Contact Us</h1> <!-- Single main heading -->
+        <!-- Using paragraphs for contact details -->
+        <h1>Phone: 07490319029</h1>
+        <h1>Email: RolsaTech@gmail.com</h1>
+
+        <!-- Map -->
+        <div class="map-container"> <!-- Wrap map for better styling control -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10421.357859950596!2d-2.8554680634294365!3d53.215932982042176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1742896116489!5m2!1sen!2suk"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <!-- Changed to a paragraph as it's not a link -->
+            <p>© Rolsa Technologies owns all rights to the website, having agreed to the terms and conditions</p>
+        </div>
+    </footer>
+
+    <!-- === LINK TO THE SAME JAVASCRIPT FILE === -->
+    <script src="js/script.js"></script> <!-- Adjust path if needed -->
+    <!-- ======================================= -->
+
+</body>
+</html>
