@@ -1,0 +1,351 @@
+/* --- Base Resets and Body --- */
+body, ul, li, h1, p, footer, main, nav, div, span, a, button, svg {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: bisque;
+    /* DO NOT set a global background color here unless intended */
+    /* background-color: rgb(15, 145, 37); <-- REMOVED */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Set a default background for the page content area */
+    color: bisque; /* Default text color */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    background-color: rgb(15, 145, 37); /* Green background for nav */
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Needed for absolute positioning of mobile menu */
+    z-index: 1000;
+    min-height: 60px; /* Give nav a minimum height */
+}
+
+/* Ensure elements within nav inherit its background/color */
+nav, nav ul, nav li, nav div, nav span, nav a, nav button, nav svg, nav svg *, nav text {
+    background-color: inherit; /* Inherit green */
+    color: inherit; /* Inherit color (will be overridden by specific rules) */
+}
+nav a {
+     color: bisque; /* Specific color for nav links */
+}
+
+/* --- Nav Left (Logo/Name) --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    color: bisque;
+    font-size: 20px;
+    gap: 10px; /* Space between logo and name */
+    /* justify-content: space-between; REMOVED - Usually not needed here */
+}
+
+.nav-left svg {
+    height: 50px; /* Explicit height for SVG */
+    width: auto;
+    display: block; /* Prevent extra space below */
+}
+/* Fine-tune SVG text if needed */
+.nav-left .cls-2 {
+    font-size: 30px; /* Adjust if the default '36px' is too large */
+}
+
+.company-name {
+    /* color: bisque; Inherited */
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* --- Nav Center (Main Links) --- */
+.navbar {
+    display: flex; /* Displayed inline on desktop */
+    list-style-type: none;
+    margin: 0; /* Corrected margin */
+    padding: 0; /* Added padding reset */
+}
+
+.navbar li {
+    /* background-color inherited */
+}
+
+.navbar a {
+    text-decoration: none;
+    /* color: bisque; Inherited */
+    font-size: 18px; /* Adjusted size */
+    padding: 8px 15px;
+    display: block; /* Good practice for links */
+    transition: background-color 0.3s ease; /* Corrected transition */
+    /* justify-content: space-evenly; REMOVED - Doesn't apply to links */
+}
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* --- Nav Right (Login/Register) --- */
+.nav-right {
+    display: flex; /* Displayed inline on desktop */
+    align-items: center;
+}
+
+.nav-right a {
+    /* color: bisque; Inherited */
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 10px;
+    font-size: 18px; /* Match navbar links */
+    transition: background-color 0.3s ease;
+}
+
+.nav-right a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* === Hamburger Menu Button === */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto; /* Push toward right */
+    order: 3; /* Ensure it visually appears last if flex layout changes */
+    z-index: 1001;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: bisque; /* Hamburger line color */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section --- */
+/* Style .Hero specifically for each page if needed, or provide general styles */
+.Hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px - 50px); /* Adjust based on nav and footer height */
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e9e9e9; /* Fallback background */
+}
+
+/* Specific Hero styles for the main page (if needed) */
+body:has(main.Hero:not(.contact-hero)) .Hero { /* More specific selector if needed*/
+    background-image: url(../images/Solar_panels.png); /* CHECK PATH */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: rgb(16, 194, 46); /* Green text for main hero */
+}
+
+/* Specific Hero styles for the contact page */
+.contact-hero {
+     color: bisque; /* Standard text color for contact page */
+     background-image: none; /* No background image for contact */
+}
+.contact-hero h1 {
+    color: rgb(15, 145, 37); /* Green heading for contact */
+}
+.contact-hero .contact-detail {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: bisque;
+}
+.contact-hero .map-container {
+    margin-top: 30px;
+    max-width: 100%;
+    width: 600px; /* Max width for the map */
+}
+.contact-hero iframe {
+    max-width: 100%;
+    border: 1px solid #ccc; /* Optional border for map */
+}
+
+
+.Hero h1 {
+    font-size: clamp(32px, 5vw, 48px); /* Responsive font size */
+    margin-bottom: 20px;
+    /* color set by specific hero styles above */
+
+    background-color: transparent;
+}
+
+/* Style the main hero button */
+.Hero .cta-button {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 25px;
+    transition: background-color 0.3s ease;
+    background-color: rgb(23, 187, 78); /* Button color */
+    border: none; /* Removed border: 10px */
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.Hero .cta-button:hover {
+    background-color: rgb(18, 150, 62); /* Darker green on hover */
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: rgb(15, 145, 37); /* Green footer background */
+    color: bisque;
+    padding: 15px 10px;
+    margin-top: 0; /* Footer directly follows main content */
+}
+
+.copyright {
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    /* background-color is inherited */
+}
+
+/* Style the paragraph inside copyright */
+.copyright p {
+    /* color: bisque; Inherited */
+    margin: 0;
+    background-color: inherit;
+}
+
+
+/* === Media Query for Mobile (Using User's Breakpoint) === */
+@media (max-width: 480px) {
+
+    /* Hide standard nav links and right section */
+    .navbar {
+        display: none; /* Hide the list by default */
+        position: absolute;
+        top: 100%; /* Position below the nav bar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgb(15, 145, 37); /* Match nav background */
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 228, 196, 0.2); /* Optional separator */
+    }
+
+    .navbar .mobile-only{
+        display: none; /* Hide the list by default */
+        position: absolute;
+        top: 100%; /* Position below the nav bar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgb(15, 145, 37); /* Match nav background */
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 228, 196, 0.2); 
+
+    }
+
+    .nav-right {
+        display: none; /* Hide Login/Register block */
+    }
+
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block; /* Show the button */
+    }
+
+    /* Styles when the mobile menu is active (toggled by JS) */
+    .navbar.active {
+        display: flex; /* Show the menu */
+    }
+
+    /* Style links within the mobile menu */
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar a {
+        padding: 15px 20px; /* Larger touch targets */
+        width: 100%;
+        font-size: 16px; /* Adjusted mobile font size */
+        border-bottom: 1px solid rgba(255, 228, 196, 0.1); /* Optional dividers */
+        border-radius: 0; /* No radius in mobile list */
+    }
+    .navbar li:last-child a {
+        border-bottom: none;
+    }
+    .navbar a:hover {
+        background-color: #333; /* Keep hover effect */
+        border-radius: 0;
+    }
+
+    /* Animate hamburger to 'X' when active */
+    .menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Adjust Hero text size for mobile */
+    .Hero h1 {
+        /* font-size already responsive using clamp() */
+    }
+     /* No Hero p rule needed if not used */
+
+    /* Adjust map size */
+     .contact-hero .map-container {
+        width: 100%; /* Full width on small screens */
+        height: 300px; /* Adjust height as needed */
+    }
+     .contact-hero iframe {
+        height: 100%;
+    }
+
+    /* Your existing .box rules if they apply to content */
+    /* .box{ flex: 1 1 100%; max-width: 100%; } */
+}
+
+
+/* === Optional: Styles for larger screens === */
+/* This might be redundant if base styles are desktop */
+/* Remove or adjust if your base styles cover everything > 480px */
+@media (min-width: 481px) {
+    /* Ensure desktop layout is enforced if base styles were altered */
+     .navbar {
+        display: flex;
+        position: static; /* Not absolute */
+        flex-direction: row; /* Horizontal */
+        width: auto;
+        background-color: transparent; /* Inherit from nav */
+        border-top: none;
+     }
+     .navbar a:hover {
+         border-radius: 5px; /* Restore desktop radius */
+     }
+     .nav-right {
+         display: flex; /* Ensure shown */
+     }
+     .menu-toggle {
+         display: none; /* Ensure hidden */
+     }
+     /* Your existing .box rules for desktop */
+     /* .box{ flex: 1; max-width: 100%; } */
+}

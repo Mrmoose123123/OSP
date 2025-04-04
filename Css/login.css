@@ -1,0 +1,395 @@
+/* --- Base Resets and Body --- */
+body, ul, li, h1, p, footer, main, nav, div, span, a, button, svg, form, label, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* DO NOT set a global background color here */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(15, 145, 37); /* Default background for content */
+    color: #333;
+    min-height: 100vh; /* Ensure body takes full height */
+    display: flex; /* Use flexbox for sticky footer */
+    flex-direction: column; /* Stack header, main, footer */
+}
+
+main {
+    flex-grow: 1; /* Allow main content to push footer down */
+}
+
+
+/* --- Navigation Bar --- */
+nav {
+    background-color: rgb(15, 145, 37); /* Green background for nav */
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Needed for mobile menu positioning */
+    z-index: 1000;
+    min-height: 60px;
+    flex-shrink: 0; /* Prevent nav from shrinking */
+}
+
+/* Ensure elements within nav inherit its background/color */
+nav, nav ul, nav li, nav div, nav span, nav a, nav button, nav svg, nav svg *, nav text {
+    background-color: inherit;
+    color: inherit;
+}
+nav a {
+     color: bisque; /* Specific color for nav links */
+}
+
+/* --- Nav Left (Logo/Name) --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    color: bisque;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.nav-left svg {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+.nav-left .cls-2 {
+    font-size: 30px;
+}
+
+.company-name {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* --- Nav Center (Main Links) --- */
+.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li { }
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* --- Nav Right (Login/Register) --- */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-right a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* === Hamburger Menu Button === */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+    order: 3;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: bisque;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section (General & Specific Pages) --- */
+.Hero { /* General styles for containers using .Hero */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Default Hero h1 style */
+.Hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+}
+
+/* Default Hero p style */
+.Hero p {
+    font-size: clamp(18px, 3vw, 24px);
+    max-width: 600px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+/* Hero styles for the MAIN page */
+body:not([class*='-page']) main.Hero { /* Target Hero only if body has no specific page class */
+    min-height: calc(100vh - 70px - 50px);
+    background-image: url(../images/Solar_panels.png); /* CHECK PATH */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: rgb(16, 194, 46); /* Green text for main hero */
+}
+/* Button specific to main page hero */
+body:not([class*='-page']) .Hero a.cta-button {
+    text-decoration: none; color: #fff; font-size: 18px; padding: 12px 25px;
+    transition: background-color 0.3s ease; background-color: rgb(23, 187, 78);
+    border: none; border-radius: 5px; font-weight: bold; margin-top: 15px;
+    display: inline-block;
+}
+body:not([class*='-page']) .Hero a.cta-button:hover { background-color: rgb(18, 150, 62); }
+
+
+/* Hero styles for the CONTACT page (using .contact-page class on body/main) */
+main.contact-page { /* Use main tag if class is there */
+     color: #333; background-image: none;
+     min-height: calc(100vh - 70px - 50px);
+     padding: 40px 20px; /* Add padding like Hero */
+     display: flex; flex-direction: column; align-items: center;
+}
+.contact-page h1 { color: rgb(15, 145, 37); margin-bottom: 20px; }
+.contact-page .contact-detail { font-size: 1.1em; margin-bottom: 10px; }
+.contact-page .map-container { margin-top: 30px; max-width: 100%; width: 600px; }
+.contact-page iframe { max-width: 100%; border: 1px solid #ccc; }
+
+/* Content styles for the CARBON page (using .carbon-calculator-page class on body/main) */
+main.carbon-calculator-page {
+    padding: 20px;
+}
+.carbon-calculator-page > h1 { /* Direct child H1 */
+     color: rgb(15, 145, 37); text-align: center; margin-bottom: 30px;
+}
+/* Styles for the div containing the widget, using .Hero class */
+.carbon-calculator-page div.Hero {
+    background-image: url(../images/Ev_Charging_station.png); /* Specific background */
+    background-attachment: fixed; background-size: cover; background-position: center;
+    color: bisque; padding: 30px; border-radius: 8px; min-height: auto;
+}
+
+/* --- Login/Registration Form Styles --- */
+/* Container for the form area (adjust selector if needed, e.g., main.login-page .form-container) */
+.register-container_row { /* Style the wrapper div if used */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Takes width from parent */
+    margin-top: 30px; /* Space from heading */
+}
+
+/* Specific overrides for Hero when used on login/register page */
+main.login-page.Hero, main.register-page.Hero {
+    background-image: none; /* No background image */
+    color: #333; /* Default text colors */
+    min-height: auto; /* Height defined by content */
+    padding: 30px 15px; /* Adjust padding */
+    height: auto; /* Override 100vh from old CSS */
+}
+main.login-page h1, main.register-page h1 {
+     color: rgb(15, 145, 37); /* Green headings */
+}
+
+
+/* The white box containing the form */
+.form-box {
+    background-color: #fff; /* White background for the form itself */
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 450px; /* Max width of the form box */
+    width: 90%; /* Responsive width */
+    margin: 0 auto; /* Center the box if .register-container_row is not used */
+}
+
+.form-box form {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center; /* Center items within the form */
+}
+
+.form-box label {
+    display: block;
+    color: #333; /* Dark gray label text */
+    font-size: 14px; /* Slightly smaller label */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+    width: 90%; /* Align label with input start */
+    text-align: left;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"]{
+    width: 90%; /* Consistent input width */
+    padding: 12px; /* More padding */
+    margin-bottom: 15px; /* Space below input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-box button[type="submit"] {
+    width: 90%; /* Match input field width */
+    padding: 12px; /* Match input padding */
+    margin-top: 15px; /* Space above button */
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(23, 187, 78); /* Site green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+.form-box button[type="submit"]:hover {
+     background-color: rgb(18, 150, 62); /* Darker green */
+}
+
+/* Link below form (e.g., "Don't have an account?") */
+.form-box .form-link {
+     margin-top: 20px;
+     text-align: center;
+     font-size: 14px;
+     color: #555;
+}
+.form-box .form-link a {
+    color: rgb(15, 145, 37); /* Link color */
+    text-decoration: underline;
+}
+.form-box .form-link a:hover {
+    text-decoration: none;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: rgb(15, 145, 37); /* Green footer background */
+    color: bisque;
+    padding: 15px 10px;
+    margin-top: auto; /* Pushes footer to bottom with flexbox */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.copyright {
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+.copyright p {
+    margin: 0;
+    background-color: inherit;
+}
+
+
+/* === Media Query for Mobile (Using 480px) === */
+@media (max-width: 480px) {
+
+    /* Mobile Nav adjustments */
+    nav { padding: 5px 15px; }
+    .nav-left svg { height: 40px; }
+    .company-name { font-size: 18px; }
+
+    /* Mobile Menu Logic */
+    .navbar {
+        display: none; position: absolute; top: 100%; left: 0; right: 0; width: 100%;
+        background-color: rgb(15, 145, 37); flex-direction: column; padding: 10px 0;
+        border-top: 1px solid rgba(255, 228, 196, 0.2);
+    }
+    .nav-right { display: none; }
+    .menu-toggle { display: block; }
+    .navbar.active { display: flex; }
+
+    /* Mobile Menu Links */
+    .navbar li { width: 100%; text-align: center; }
+    .navbar a {
+        padding: 15px 20px; width: 100%; font-size: 16px;
+        border-bottom: 1px solid rgba(255, 228, 196, 0.1); border-radius: 0;
+    }
+    .navbar li:last-child a { border-bottom: none; }
+    .navbar a:hover { background-color: #333; border-radius: 0; }
+
+    /* Hamburger Animation */
+    .menu-toggle.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile adjustments for general Hero/Content */
+    .Hero h1 { /* Font size already responsive */ }
+    .Hero p { /* Font size already responsive */ }
+
+    /* Mobile Contact Page */
+    .contact-page .map-container { width: 100%; height: 300px; }
+    .contact-page iframe { height: 100%; }
+
+    /* Mobile Carbon Page */
+     .carbon-calculator-page div.Hero {
+         padding: 15px; background-attachment: scroll;
+     }
+
+     /* Mobile Form Adjustments */
+     .form-box {
+         padding: 20px; /* Less padding */
+         width: 95%;
+     }
+     .form-box label,
+     .form-box input[type="text"],
+     .form-box input[type="email"],
+     .form-box input[type="password"],
+     .form-box input[type="tel"],
+     .form-box input[type="date"],
+     .form-box button[type="submit"] {
+         width: 100%; /* Full width inside form box */
+     }
+
+    /* Your existing mobile .box rules if used */
+    /* .box{ flex: 1 1 100%; max-width: 100%; } */
+}
+
+
+/* === Media Query for Desktop (Ensures overrides if needed) === */
+@media (min-width: 481px) {
+    .navbar {
+        display: flex; position: static; flex-direction: row;
+        width: auto; background-color: transparent; border-top: none;
+     }
+     .navbar a:hover { border-radius: 5px; }
+     .nav-right { display: flex; }
+     .menu-toggle { display: none; }
+
+     /* Your existing desktop .box rules if used */
+     /* .box{ flex: 1; max-width: 100%; } */
+}

@@ -1,0 +1,444 @@
+body {
+
+    font-family: Arial, sans-serif;
+  
+    margin: 0;
+  
+    padding: 0;
+  
+    background-color: rgb(15, 145, 37);
+  
+  }
+  
+  .container {
+  
+    max-width: 800px;
+  
+    margin: 20px auto;
+  
+    padding: 20px;
+  
+    background-color: rgb(15, 145, 37);
+  
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  
+    border-radius: 8px;
+  
+  }
+  
+  h1, p {
+  
+    text-align: center;
+  
+  }
+  
+  .feature {
+  
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    justify-content: center;
+  
+    gap: 20px;
+  
+    margin-top: 20px;
+  
+  }
+  
+  .card {
+  
+    background-color: rgb(15, 145, 37);
+  
+    padding: 15px;
+  
+    border-radius: 8px;
+  
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  
+    text-align: center;
+  
+    width: 200px;
+  
+  }
+  
+  .card img {
+  
+    width: 100px;
+  
+    height: 100px;
+  
+    border-radius: 50%;
+  
+    object-fit: cover;
+  
+  }
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+
+  padding: 0;
+
+  background-color: rgb(15, 145, 37);
+
+}
+
+.container {
+
+  max-width: 800px;
+
+  margin: 20px auto;
+
+  padding: 20px;
+
+  background-color: rgb(15, 145, 37);
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  border-radius: 8px;
+
+}
+
+h1, p {
+
+  text-align: center;
+
+}
+
+.feature {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 20px;
+
+}
+
+.card {
+
+background-color: rgb(41, 190, 66);
+
+  padding: 15px;
+
+  border-radius: 8px;
+
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+
+  width: 200px;
+
+}
+
+.card img {
+
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+}
+
+@media (max-width: 600px) {
+
+    .container {
+  
+        padding: 15px;
+  
+    }
+  
+    .feature {
+  
+        flex-direction: column;
+  
+        align-items: center;
+  
+    }
+  
+  }
+
+  body, ul, li{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:rgb(15, 145, 37) ;
+}
+
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+
+nav{
+    background-color: rgb(15, 145, 37);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: bisque;
+    font-size: 20px;
+    
+
+}
+
+.nav-left svg{
+    height: 100%;
+
+}
+
+
+
+
+.company-name{
+    color: bisque;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar{
+    display: flex;
+    list-style-type: none;
+    margin: 0,1;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: bisque;
+    font-size: 20px;
+    padding: 8px 15px;
+    transition: background-color 0.3 ease;
+    justify-content: space-evenly;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: bisque;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.nav-right a:hover{
+    background-color: #333;
+    border-radius: 5px;
+}
+
+
+.Hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../images/Green_Energy.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: bisque;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+.copyright {
+    display: flex;
+    margin-top: 10px;
+    background-color: r(15, 145, 37);
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    font-weight: 700;
+
+}
+
+.copyright a{
+    color: bisque;
+}
+
+
+
+/* === Add or Modify this section in your EXISTING Css/main.css === */
+
+/* --- About Page Specific Styles --- */
+
+/* Override generic Hero styles for About page container if needed */
+/* Using main.about-page selector */
+main.about-page { /* Target the main element with the class */
+    background-image: url(../images/Green_Energy.png); /* Specific background from your CSS */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: bisque; /* Text color from your CSS */
+    padding: 40px 20px; /* Consistent padding */
+    min-height: calc(100vh - 70px - 50px); /* Ensure it takes height */
+    display: flex; /* Use flex to center container easily */
+    align-items: flex-start; /* Align container to top */
+    justify-content: center;
+}
+
+/* Style the container INSIDE the about-page main element */
+.about-page .container {
+    max-width: 800px;
+    width: 95%; /* Responsive width */
+    margin: 0; /* Centered by parent flexbox */
+    padding: 30px; /* More padding */
+    /* Using rgba for semi-transparent background to see hero image slightly */
+    background-color: rgba(15, 145, 37, 0.8); /* Semi-transparent green from your CSS */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+    border-radius: 8px;
+    color: bisque; /* Ensure text inside container is visible */
+}
+
+/* Style heading and paragraphs specifically inside the About page container */
+.about-page .container h1 {
+    text-align: center;
+    color: #fff; /* White heading stands out */
+    margin-bottom: 25px;
+    font-size: clamp(28px, 4vw, 40px); /* Responsive heading */
+}
+.about-page .container p {
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    max-width: 600px; /* Limit paragraph width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Feature Card Styles (incorporating styles from your CSS) */
+.about-page .feature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Slightly more gap */
+    margin-top: 30px;
+}
+
+.about-page .card {
+    /* Brighter green from your second card style */
+    background-color: rgb(41, 190, 66);
+    padding: 20px; /* More padding */
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    flex: 1 1 200px; /* Allow cards to grow/shrink, base width 200px */
+    max-width: 250px; /* Max width */
+    color: #fff; /* White text on green card */
+    transition: transform 0.3s ease;
+}
+.about-page .card:hover {
+     transform: translateY(-5px);
+}
+
+.about-page .card img {
+    width: 100px;  /* Size from your CSS */
+    height: 100px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid bisque; /* Optional border */
+}
+
+.about-page .card h3 {
+     margin-bottom: 10px;
+     font-size: 1.15em;
+}
+
+.about-page .card p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #f0f0f0; /* Lighter text */
+    text-align: center; /* Ensure p is centered */
+}
+
+/* --- End of About Page Specific Styles --- */
+
+
+/* === Add About Page Card adjustments to the MOBILE Media Query === */
+/* Find your existing @media (max-width: 480px) block */
+@media (max-width: 480px) {
+
+    /* ... (Keep all existing mobile nav/menu/form styles) ... */
+
+    /* Mobile About Page adjustments */
+    main.about-page {
+         padding: 20px 10px; /* Less padding */
+         background-attachment: scroll; /* Fixed can be weird on mobile */
+    }
+    .about-page .container {
+        padding: 20px;
+    }
+    .about-page .feature {
+        gap: 15px; /* Less gap */
+        /* No need for flex-direction: column if using flex-wrap */
+    }
+    .about-page .card {
+        flex-basis: 80%; /* Make cards wider */
+        max-width: none; /* Allow them to fill space */
+    }
+    .about-page .card img {
+        width: 80px;
+        height: 80px;
+    }
+    .navbar {
+        display: flex;
+        position: static; /* Not absolute */
+        flex-direction: row; /* Horizontal */
+        width: auto;
+        background-color: transparent; /* Inherit from nav */
+        border-top: none;
+     }
+     .navbar a:hover {
+         border-radius: 5px; /* Restore desktop radius */
+     }
+     .nav-right {
+         display: flex; /* Ensure shown */
+     }
+     .menu-toggle {
+         display: none; /* Ensure hidden */
+     }
+}
+/* --- Make sure your 600px media query isn't conflicting --- */
+/* Remove or adjust the 600px media query if 480px handles it */
+/* @media (max-width: 600px) { ... } */
+
+/* --- End of Mobile Media Query modifications --- */
+

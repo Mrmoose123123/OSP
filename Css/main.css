@@ -1,0 +1,286 @@
+/* --- Base Resets and Body --- */
+body, ul, li, h1, p, footer, main, nav, div, span, a, button, svg {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Avoid setting background-color globally here */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(15, 145, 37); /* Example background for page content */
+    color: #333; /* Default text color */
+}
+
+/* --- Navigation Bar --- */
+nav {
+    background-color: rgb(15, 145, 37);
+    padding: 5px 20px; /* Slightly reduced padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Needed for absolute positioning of mobile menu */
+    z-index: 1000;
+    min-height: 60px; /* Ensure nav has some height */
+}
+
+/* Ensure elements within nav inherit background */
+nav, nav ul, nav li, nav div, nav span, nav a, nav button, nav svg, nav svg *, nav text {
+    background-color: inherit;
+    color: inherit; /* Inherit text color too */
+}
+nav a {
+     color: bisque; /* Specific color for nav links */
+}
+
+/* --- Nav Left (Logo/Name) --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    color: bisque;
+    font-size: 20px;
+    gap: 10px; /* Space between SVG and Name */
+}
+
+.nav-left svg {
+    height: 50px; /* Control SVG size */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents extra space below inline svgs */
+}
+/* You might need to refine SVG inner styles if they conflict */
+.nav-left .cls-2 { /* Target the text inside SVG */
+    font-size: 30px; /* Adjust if needed */
+}
+
+.company-name {
+    font-weight: bold;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* --- Nav Center (Main Links) --- */
+.navbar {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar li {
+    /* background-color inherited */
+}
+
+.navbar a {
+    text-decoration: none;
+    /* color: bisque; Inherited */
+    font-size: 18px; /* Slightly smaller default */
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* --- Nav Right (Login/Register) --- */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    text-decoration: none;
+    /* color: bisque; Inherited */
+    margin-left: 15px;
+    padding: 8px 10px; /* Slightly smaller padding */
+    font-size: 18px; /* Match navbar links */
+    transition: background-color 0.3s ease;
+}
+
+.nav-right a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* --- Hamburger Menu Button --- */
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto; /* Push it to the right side before nav-right */
+    z-index: 1001; /* Above other nav items if needed */
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: bisque; /* Color of the lines */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section --- */
+.Hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px); /* Adjust based on final nav height */
+    /* Use a fallback background color if image fails */
+    background-color: #ddd;
+    background-image: url(../images/Solar_panels.png); /* Check this path */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 40px 20px; /* More padding */
+}
+
+.Hero h1 {
+    font-size: clamp(32px, 5vw, 48px); /* Responsive font size */
+    margin-bottom: 20px;
+    color: rgb(16, 194, 46); /* Color from original CSS */
+    /* Add text shadow for better readability on image */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    background-color: transparent; /* Ensure no background override */
+}
+
+/* Style the hero button specifically */
+.Hero .cta-button { /* More specific selector */
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 25px; /* Larger padding */
+    transition: background-color 0.3s ease;
+    background-color: rgb(23, 187, 78);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block; /* Needed for margin-top */
+}
+
+.Hero .cta-button:hover {
+    background-color: rgb(18, 150, 62); /* Darker green */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: rgb(15, 145, 37);
+    color: bisque;
+    padding: 15px 10px;
+    margin-top: 0; /* Should directly follow main content */
+}
+
+.copyright {
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    /* background-color is inherited */
+}
+
+.copyright p {
+    /* background-color is inherited */
+    /* color: bisque; is inherited */
+    margin: 0; /* Remove default paragraph margin */
+}
+
+
+/* === Media Query for Mobile / Hamburger Menu === */
+@media (max-width: 768px) {
+    .nav-left svg {
+        height: 40px; /* Smaller logo on mobile */
+    }
+    .company-name {
+        font-size: 18px; /* Slightly smaller name */
+    }
+
+    /* Hide standard nav links and right section */
+    .navbar {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 100%; /* Position below nav bar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgb(15, 145, 37); /* Same as nav */
+        flex-direction: column;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 228, 196, 0.2); /* Optional separator */
+    }
+    .navbar .moblie-only{
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 100%; /* Position below nav bar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgb(15, 145, 37); /* Same as nav */
+        flex-direction: column;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 228, 196, 0.2)
+
+    }
+
+    .nav-right {
+        display: none; /* Hide Login/Register block */
+    }
+
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: block; /* Show the button */
+        order: 3; /* Place it after nav-left and before nav-right visually if needed */
+    }
+
+    /* Styles when the mobile menu is active */
+    .navbar.active {
+        display: flex; /* Show the menu */
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar a {
+        padding: 15px 20px; /* Larger touch targets */
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255, 228, 196, 0.1); /* Optional dividers */
+    }
+
+    .navbar li:last-child a {
+        border-bottom: none;
+    }
+
+    .navbar a:hover {
+        background-color: #333;
+        border-radius: 0; /* Full width hover */
+    }
+
+    /* Animate hamburger to 'X' */
+    .menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Adjusted translate */
+    }
+    .menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Adjusted translate */
+    }
+
+    /* Adjust Hero text size */
+    .Hero h1 {
+        /* font-size already responsive with clamp() */
+    }
+    /* No need for separate p rule if none exists */
+
+    /* Your existing .box rules if needed */
+    /* .box{ flex: 1 1 100%; max-width: 100%; } */
+}
+
+/* Optional: Add styles for larger screens if needed,
+   though the default styles act as the desktop view here. */
+/* @media (min-width: 769px) { ... } */
